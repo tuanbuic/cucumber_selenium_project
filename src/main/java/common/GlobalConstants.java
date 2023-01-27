@@ -17,7 +17,7 @@ public class GlobalConstants {
     private final long shortTimeout = 5;
 
     private final long longTimeout = 10;
-    private final String portalPageUrl = "https://demo.nopcommerce.com/";
+    private final String  portalPageUrl = "https://demo.nopcommerce.com/";
     private final String adminPageUrl = "https://admin-demo.nopcommerce.com";
     private final String projectPath = System.getProperty("user.dir");
     private final String osName = System.getProperty("os.name");

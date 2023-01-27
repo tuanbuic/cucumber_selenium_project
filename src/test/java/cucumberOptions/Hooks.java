@@ -44,11 +44,11 @@ public class Hooks {
 
                 switch (browser) {
                     case "chrome":
-                        WebDriverManager.chromedriver().version("78.0.3904.70").setup();
+                        WebDriverManager.chromedriver().setup();
                         driver = new ChromeDriver();
                         break;
                     case "hchrome":
-                        WebDriverManager.chromedriver().version("78.0.3904.70").setup();
+                        WebDriverManager.chromedriver().setup();
                         ChromeOptions chromeOptions = new ChromeOptions();
                         chromeOptions.addArguments("headless");
                         chromeOptions.addArguments("window-size=1920x1080");
@@ -73,7 +73,7 @@ public class Hooks {
                         driver = new InternetExplorerDriver();
                         break;
                     default:
-                        WebDriverManager.chromedriver().version("78.0.3904.70").setup();
+                        WebDriverManager.chromedriver().setup();
                         driver = new ChromeDriver();
                         break;
                 }
@@ -89,7 +89,7 @@ public class Hooks {
                 Runtime.getRuntime().addShutdownHook(new Thread(new BrowserCleanup()));
             }
 
-            driver.get(Constants.DEV_URL);
+            driver.get(GlobalConstants.getGlobalConstants().getPortalPageUrl());
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             log.info("------------- Started the browser -------------");
         }
