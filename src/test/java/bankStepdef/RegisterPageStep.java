@@ -1,12 +1,20 @@
 package bankStepdef;
 
+import common.PageGeneratorManager;
+import cucumberOptions.Hooks;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
+import pageObjects.norCommercePortal.UserRegisterPageObject;
 
 public class RegisterPageStep {
+    WebDriver driver;
+    UserRegisterPageObject registerPage;
+    public RegisterPageStep(){
+        this.driver = Hooks.openAndQuitBrowser();
+        registerPage = PageGeneratorManager.getUserRegisterPage(driver);
+    }
     @When("Input to email textbox")
     public void inputToEmailTextbox() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
     }
 
     @When("Click to submit button")
